@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина по БЖД</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slide {
+            display: none !important;
+        }
+        .slide.active {
+            display: flex !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-indigo-950 via-purple-950 to-slate-950 text-white h-screen w-screen overflow-hidden font-sans select-none m-0 p-0 flex items-center justify-center">
+
+    <!-- Главный контейнер на 90% экрана -->
+    <main class="w-[90%] h-[90%] max-w-[1600px] max-h-[900px] bg-slate-900/90 rounded-3xl overflow-hidden shadow-2xl border border-white/10 flex flex-col relative">
+
+        <!-- СЛАЙД 1: Введение -->
+        <div class="slide active w-full h-full flex flex-col md:flex-row" data-slide="1">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326276_x.jpg" alt="БЖД" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-6 overflow-y-auto">
+                <span class="text-purple-400 text-sm font-bold uppercase tracking-wider">Введение</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Что такое безопасность жизнедеятельности (БЖД)?</h1>
+                <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+                    Определение БЖД как науки и области практических знаний, изучающей опасности, угрожающие человеку, и способы защиты от них в повседневной жизни, производстве и при чрезвычайных ситуациях.
+                </p>
+                <div>
+                    <button onclick="nextSlide()" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-violet-600 rounded-2xl font-bold text-base shadow-xl hover:opacity-95 transition transform hover:scale-105 cursor-pointer">Начать викторину →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 2: Вопрос 1 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="2">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="Кошма брезентова.jpg" alt="Вопрос 1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 1 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Какое специализированное противопожарное покрывало из огнеупорного брезента или стеклоткани используется для первичного тушения очага возгорания?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 2, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Термощит</button>
+                    <button onclick="checkAnswer(this, 2, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Кошма</button>
+                    <button onclick="checkAnswer(this, 2, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Одеяло-самоспас</button>
+                    <button onclick="checkAnswer(this, 2, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Брезентовый заслон</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 3: Разбор Вопроса 1 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="3">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="Кошма брезентова.jpg" alt="Разбор 1" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: Б) Кошма</h2>
+                <p class="text-gray-300 text-sm md:text-base">Кошма — это специальное огнеупорное покрывало из брезента или стеклоткани для тушения начальных возгораний.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 4: Вопрос 2 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="4">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="Deerfire_high_res_edit.jpg" alt="Пожар" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 2 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Какой процент лесных пожаров происходит по вине человека и из-за антропогенных факторов?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 4, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Не более 20%</button>
+                    <button onclick="checkAnswer(this, 4, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Около 50%</button>
+                    <button onclick="checkAnswer(this, 4, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Не менее 80%</button>
+                    <button onclick="checkAnswer(this, 4, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Ровно 100%</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 5: Разбор Вопроса 2 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="5">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="Deerfire_high_res_edit.jpg" alt="Разбор 2" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: В) Не менее 80%</h2>
+                <p class="text-gray-300 text-sm md:text-base">Главные причины: непотушенные костры, брошенные окурки и неконтролируемые палы сухой травы.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 6: Вопрос 3 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="6">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="VXthX2mo.webp" alt="Сель" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 3 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Как называется внезапный и очень быстрый поток воды, состоящий из смеси воды и обломков горных пород?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 6, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Оползень</button>
+                    <button onclick="checkAnswer(this, 6, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Сель</button>
+                    <button onclick="checkAnswer(this, 6, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Лавина</button>
+                    <button onclick="checkAnswer(this, 6, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Наводнение</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 7: Разбор Вопроса 3 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="7">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="VXthX2mo.webp" alt="Разбор 3" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: Б) Сель</h2>
+                <p class="text-gray-300 text-sm md:text-base">Сель обладает колоссальной разрушительной силой и возникает из-за ливней или таяния ледников.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 8: Вопрос 4 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="8">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="chelovecheski-faktor.jpg" alt="Человеческий фактор" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 4 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Как называется влияние психологических, физических и социальных особенностей людей на их действия и работу с техникой?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 8, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Человеческий фактор</button>
+                    <button onclick="checkAnswer(this, 8, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Синдром выгорания</button>
+                    <button onclick="checkAnswer(this, 8, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Профессиональный риск</button>
+                    <button onclick="checkAnswer(this, 8, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Социальная инженерия</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 9: Разбор Вопроса 4 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="9">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="chelovecheski-faktor.jpg" alt="Разбор 4" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: А) Человеческий фактор</h2>
+                <p class="text-gray-300 text-sm md:text-base">Большинство аварий в сложных технологических сферах происходят из-за ошибок персонала.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 10: Вопрос 5 (Ожоги) -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="10">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326290_m.jpg" alt="Ожоги" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 5 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Какое первое и самое важное действие необходимо совершить при термическом ожоге I или II степени?</h2>
+                <div class="space-y-2.5 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 10, 'A')" class="option-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs md:text-sm font-medium cursor-pointer">A) Смазать место ожога маслом или жиром</button>
+                    <button onclick="checkAnswer(this, 10, 'Б')" class="option-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs md:text-sm font-medium cursor-pointer">Б) Охлаждать место ожога водой 10–15 минут</button>
+                    <button onclick="checkAnswer(this, 10, 'В')" class="option-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs md:text-sm font-medium cursor-pointer">В) Проколоть пузыри и обработать спиртом</button>
+                    <button onclick="checkAnswer(this, 10, 'Г')" class="option-btn text-left p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-xs md:text-sm font-medium cursor-pointer">Г) Наложить тугую давящую повязку</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 11: Разбор Вопроса 5 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="11">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326290_m.jpg" alt="Разбор 5" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: Б) Охлаждать водой</h2>
+                <p class="text-gray-300 text-sm md:text-base">Охлаждение водой останавливает повреждение тканей. Масло и жир использовать категорически запрещено!</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 12: Вопрос 6 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="12">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326290_m.jpg" alt="Луи Пастер" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 6 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Кто является основоположником микробиологии и иммунологии, открыл принципы вакцинации?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 12, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Луи Пастер</button>
+                    <button onclick="checkAnswer(this, 12, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Александр Флемминг</button>
+                    <button onclick="checkAnswer(this, 12, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Нильс Болин</button>
+                    <button onclick="checkAnswer(this, 12, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Норман Борлауг</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 13: Разбор Вопроса 6 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="13">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326290_m.jpg" alt="Разбор 6" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: А) Луи Пастер</h2>
+                <p class="text-gray-300 text-sm md:text-base">Доказал микробиологическую природу болезней и заложил основы современной вакцинации.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 14: Вопрос 7 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="14">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326289_x.jpg" alt="Эрнст Геккель" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 7 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Кто ввел понятие "Экология"?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 14, 'A')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">A) Юлия Владимировна</button>
+                    <button onclick="checkAnswer(this, 14, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Канье Вест</button>
+                    <button onclick="checkAnswer(this, 14, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Эрнст Геккель</button>
+                    <button onclick="checkAnswer(this, 14, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Браун Кель</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 15: Разбор Вопроса 7 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="15">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326289_x.jpg" alt="Разбор 7" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: В) Эрнст Геккель</h2>
+                <p class="text-gray-300 text-sm md:text-base">В 1866 году он официально определил экологию как науку о взаимоотношениях организмов со средой.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 16: Вопрос 8 (Сетка фотографий справа) -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="16">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 8 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold leading-snug mb-3">На какой фотографии изображен автобус-амфибия?</h2>
+                    <p class="text-gray-300 text-sm">Кликните на правильную карточку справа!</p>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full grid grid-cols-2 gap-2 p-3 bg-black">
+                <div onclick="checkBusAnswer(this, 'A')" class="bus-opt relative overflow-hidden border-2 border-transparent hover:border-pink-500 cursor-pointer transition rounded-xl bg-slate-900">
+                    <img src="photo_5276451857142326193_x.jpg" class="w-full h-full object-cover pointer-events-none" alt="Фото 1">
+                </div>
+                <div onclick="checkBusAnswer(this, 'Б')" class="bus-opt relative overflow-hidden border-2 border-transparent hover:border-pink-500 cursor-pointer transition rounded-xl bg-slate-900">
+                    <img src="photo_5276451857142326194_x.jpg" class="w-full h-full object-cover pointer-events-none" alt="Фото 2">
+                </div>
+                <div onclick="checkBusAnswer(this, 'В')" class="bus-opt relative overflow-hidden border-2 border-transparent hover:border-pink-500 cursor-pointer transition rounded-xl bg-slate-900">
+                    <img src="photo_5276451857142326184_y.jpg" class="w-full h-full object-cover pointer-events-none" alt="Фото 3">
+                </div>
+                <div onclick="checkBusAnswer(this, 'Г')" class="bus-opt relative overflow-hidden border-2 border-transparent hover:border-pink-500 cursor-pointer transition rounded-xl bg-slate-900">
+                    <img src="photo_5276451857142326195_m.jpg" class="w-full h-full object-cover pointer-events-none" alt="Фото 4">
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 17: Разбор Вопроса 8 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="17">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="photo_5276451857142326184_y.jpg" alt="Автобус-амфибия" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-4 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold">Разбор ответа</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-emerald-300">Правильный ответ: В) Желтый автобус</h2>
+                <p class="text-gray-300 text-sm md:text-base">Автобус-амфибия из Роттердама, способный ездить по дорогам и плавать по воде.</p>
+                <div class="pt-4">
+                    <button onclick="nextSlide()" class="px-6 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl font-bold shadow-lg hover:opacity-95 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 18: Вопрос 9 -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="18">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="teacher.jpg" alt="Преподаватель" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-6 md:p-12 flex flex-col justify-between overflow-y-auto">
+                <div class="flex justify-between items-center">
+                    <span class="text-pink-400 text-sm font-bold">Вопрос 9 из 9</span>
+                    <div class="text-emerald-400 font-bold text-sm score-val">Счет: 0</div>
+                </div>
+                <h2 class="text-lg md:text-xl font-bold leading-snug my-2">Как зовут нашего преподавателя?</h2>
+                <div class="space-y-3 flex flex-col my-2">
+                    <button onclick="checkAnswer(this, 18, 'А')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">А) Юлия Владимировна</button>
+                    <button onclick="checkAnswer(this, 18, 'Б')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Б) Канье Вест</button>
+                    <button onclick="checkAnswer(this, 18, 'В')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">В) Юлия Михайловна</button>
+                    <button onclick="checkAnswer(this, 18, 'Г')" class="option-btn text-left p-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition text-sm font-medium cursor-pointer">Г) Анастасия Владимировна</button>
+                </div>
+                <div class="flex justify-between items-center pt-2">
+                    <div class="feedback text-sm font-bold"></div>
+                    <button onclick="nextSlide()" class="px-5 py-2 bg-emerald-600 rounded-xl font-bold hover:bg-emerald-500 transition cursor-pointer text-sm">Далее →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЛАЙД 19: Финал -->
+        <div class="slide w-full h-full flex flex-col md:flex-row" data-slide="19">
+            <div class="w-full md:w-1/2 h-1/2 md:h-full relative bg-black overflow-hidden">
+                <img src="teacher.jpg" alt="Юлия Владимировна" class="w-full h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 h-1/2 md:h-full p-8 md:p-16 flex flex-col justify-center space-y-6 overflow-y-auto">
+                <span class="text-emerald-400 text-sm font-bold uppercase tracking-wider">Викторина завершена!</span>
+                <h2 class="text-2xl md:text-4xl font-extrabold text-emerald-300">Правильный ответ: А) Юлия Владимировна</h2>
+                <p id="final-score" class="text-lg md:text-xl text-gray-200 font-semibold">Ваш итоговый счет: 0</p>
+                <div>
+                    <button onclick="restartQuiz()" class="px-8 py-4 bg-gradient-to-r from-pink-500 to-violet-600 rounded-2xl font-bold text-base shadow-xl hover:opacity-95 transition cursor-pointer">Пройти заново ⟳</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Скрипты управления -->
+    <script>
+        let currentSlideIndex = 0;
+        let score = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        const correctAnswers = {
+            2: 'Б',
+            4: 'В',
+            6: 'Б',
+            8: 'А',
+            10: 'Б',
+            12: 'А',
+            14: 'В',
+            18: 'А'
+        };
+
+        function updateAllScores() {
+            document.querySelectorAll('.score-val').forEach(el => {
+                el.textContent = `Счет: ${score}`;
+            });
+        }
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (index >= slides.length) {
+                index = 0;
+            }
+            currentSlideIndex = index;
+            
+            slides[currentSlideIndex].classList.add('active');
+
+            if (currentSlideIndex === 19) {
+                document.getElementById('final-score').textContent = `Ваш итоговый счет: ${score}`;
+            }
+        }
+
+        function nextSlide() {
+            showSlide(currentSlideIndex + 1);
+        }
+
+        function checkAnswer(buttonElement, slideNum, selectedOption) {
+            const currentSlide = slides[currentSlideIndex];
+            const feedback = currentSlide.querySelector('.feedback');
+            const correctAnswer = correctAnswers[slideNum];
+
+            // Блокируем кнопки этого вопроса повторно
+            currentSlide.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+
+            if (selectedOption === correctAnswer) {
+                feedback.textContent = "✅ Верно!";
+                feedback.className = "feedback text-sm font-bold text-emerald-400";
+                score += 10;
+                updateAllScores();
+                setTimeout(() => {
+                    nextSlide();
+                }, 800);
+            } else {
+                feedback.textContent = "❌ Неверно!";
+                feedback.className = "feedback text-sm font-bold text-rose-500";
+            }
+        }
+
+        function checkBusAnswer(cardElement, selectedOption) {
+            const currentSlide = slides[currentSlideIndex];
+            const feedback = currentSlide.querySelector('.feedback');
+            
+            currentSlide.querySelectorAll('.bus-opt').forEach(card => card.style.pointerEvents = 'none');
+
+            if (selectedOption === 'В') {
+                feedback.textContent = "✅ Верно!";
+                feedback.className = "feedback text-sm font-bold text-emerald-400";
+                score += 10;
+                updateAllScores();
+                setTimeout(() => {
+                    nextSlide();
+                }, 800);
+            } else {
+                feedback.textContent = "❌ Неверно!";
+                feedback.className = "feedback text-sm font-bold text-rose-500";
+            }
+        }
+
+        function restartQuiz() {
+            score = 0;
+            updateAllScores();
+            document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = false);
+            document.querySelectorAll('.bus-opt').forEach(card => card.style.pointerEvents = 'auto');
+            showSlide(0);
+        }
+
+        // Запуск при старте
+        showSlide(0);
+    </script>
+</body>
+</html>
